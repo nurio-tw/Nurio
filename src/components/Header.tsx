@@ -91,12 +91,12 @@ export default function Header({
           </nav>
 
           {/* Zone 3: User Actions & Notification */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          <div className="flex items-center gap-1 sm:gap-2.5 shrink-0">
             {/* Quick Discussion Direct Overlay Trigger */}
             <button
               type="button"
               onClick={onOpenThreadsDrawer}
-              className={`px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all border cursor-pointer ${
+              className={`px-2 sm:px-2.5 py-1 rounded-lg text-xs font-semibold flex items-center gap-1 sm:gap-1.5 transition-all border cursor-pointer shrink-0 ${
                 activeView === 'threads'
                   ? 'bg-slate-900 text-white border-slate-900 shadow-xs'
                   : 'text-slate-700 hover:text-slate-900 bg-slate-50 hover:bg-slate-100 border-slate-200/90'
@@ -104,7 +104,7 @@ export default function Header({
               title="開啟護生交流看板"
             >
               <span className="text-xs">💬</span>
-              <span className="text-xs font-bold">交流看板</span>
+              <span className="hidden sm:inline text-xs font-bold">交流看板</span>
             </button>
 
             <PWAInstallButton />
