@@ -70,7 +70,7 @@ export default function Header({
               }`}
             >
               <span className="h-2 w-2 rounded-full bg-rose-500 inline-block animate-pulse" />
-              <span>護生交流看板</span>
+              <span className="hidden sm:inline">護生交流看板</span>
             </button>
             {activeView === 'instructors' && (
               <>
