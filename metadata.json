@@ -1,0 +1,6 @@
+{
+  "name": "北護實習手冊",
+  "description": "專為國立台北護理健康大學護理系學生設計的實習手冊與評價平台，支援基護、內外、產兒科、精神及社區實習分區，提供詳細的老師背景、實際情況、注意事項與學長姐星等反饋。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

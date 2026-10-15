@@ -1,0 +1,69 @@
+{
+  "entities": {
+    "Instructor": {
+      "title": "Instructor",
+      "description": "Clinical nursing instructors evaluated by students",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "hospital": { "type": "string" },
+        "rating": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "category", "hospital"]
+    },
+    "Thread": {
+      "title": "Thread",
+      "description": "Nursing community discussion thread post (Threads style)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "authorName": { "type": "string" },
+        "grade": { "type": "string" },
+        "content": { "type": "string", "maxLength": 1000 },
+        "category": { "type": "string" },
+        "tags": { "type": "array" },
+        "likes": { "type": "array" },
+        "replyCount": { "type": "number" },
+        "isAnonymous": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "content", "createdAt"]
+    },
+    "ThreadReply": {
+      "title": "ThreadReply",
+      "description": "Reply comment under a nursing thread",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "threadId": { "type": "string" },
+        "userId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "grade": { "type": "string" },
+        "content": { "type": "string", "maxLength": 500 },
+        "isAnonymous": { "type": "boolean" },
+        "likes": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "threadId", "userId", "content", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/instructors/{instructorId}": {
+      "schema": "Instructor",
+      "description": "Clinical instructors collection"
+    },
+    "/threads/{threadId}": {
+      "schema": "Thread",
+      "description": "Community threads discussion collection"
+    },
+    "/thread_replies/{replyId}": {
+      "schema": "ThreadReply",
+      "description": "Replies to discussion threads"
+    }
+  }
+}

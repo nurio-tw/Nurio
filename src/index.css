@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: #FAFAFA;
+  color: #0F172A;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle, polished scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .animate-overlayUp {
+    animation: overlayUp 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .animate-nurio-float {
+    animation: nurioFloat 3s ease-in-out infinite;
+  }
+  .animate-nurio-ring {
+    animation: nurioPulseRing 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  }
+  .animate-nurio-bubble {
+    animation: nurioBubblePop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  .animate-nurio-dot-drop {
+    animation: nurioDotDrop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
+  }
+  .animate-nurio-shimmer {
+    animation: nurioShimmer 2.5s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes overlayUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes nurioFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0.4deg);
+  }
+}
+
+@keyframes nurioPulseRing {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.6;
+  }
+  60% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes nurioBubblePop {
+  0% {
+    transform: scale(0) translate(20px, 20px);
+    opacity: 0;
+  }
+  65% {
+    transform: scale(1.18) translate(-1px, -1px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes nurioDotDrop {
+  0% {
+    transform: translateY(-16px) scale(0.3);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(2px) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes nurioShimmer {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  50%, 100% {
+    transform: translateX(220%) skewX(-20deg);
+  }
+}
+
